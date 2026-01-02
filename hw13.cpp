@@ -1,34 +1,21 @@
 #include <iostream>
-#include <string>
 using namespace std;
-
 
 int main()
 {
-    int score[5][3] = {
-        {80, 90, 85},
-        {70, 75, 78},
-        {88, 92, 95},
-        {60, 65, 70},
-        {90, 93, 89}
-    };
+   int score[6] = {92,85,45,33,76,34};
+   int temp;
+   
+   for (int i=1; i<6; i++) {
+       for (int j=0; j < 6-i ;j++){
+           if (score[j] > score[j+1]){
+               temp = score[j];
+               score[j] = score[j+1];
+               score[j+1] = temp;
+           }
+       }
+           
+   }
 
-      string name[5] = {
-        "Amy",
-        "Ben",
-        "Cindy",
-        "David",
-        "Eva"
-    };  
-    for (int i=0; i<5;i++) {
-        int sum=0;
-        cout << name[i] <<"的成績:";
-        for (int j=0;j<3;j++){
-            cout << score[i][j] << "";
-            sum = sum + score[i][j];
-        }
-        cout<<"總分為:"<< sum << endl;
-        
-    }
     return 0;
 }
